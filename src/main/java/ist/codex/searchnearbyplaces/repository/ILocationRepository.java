@@ -1,4 +1,16 @@
 package ist.codex.searchnearbyplaces.repository;
 
-public interface ILocationRepository {
+import ist.codex.searchnearbyplaces.entity.Location;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
+
+@Repository
+public interface ILocationRepository extends JpaRepository<Location, Long> {
+
+    Optional<Location> findByLatitudeEqualsAndLatitudeEqualsAndRadius (Double longtitude,
+                                                                       Double latitude,
+                                                                       Integer radius);
+
 }

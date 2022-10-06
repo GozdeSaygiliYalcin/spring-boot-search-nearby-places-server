@@ -1,4 +1,4 @@
-package ist.codex.searchnearbyplaces.repository.entity;
+package ist.codex.searchnearbyplaces.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,10 +17,10 @@ public class Location {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "longtitude", nullable = false)
+    @Column(name = "longitude", nullable = false)
     private Double longitude;
     @Column(name = "latitude", nullable = false)
     private Double latitude;
     @Column(name = "radius", nullable = false)
-    private Double radius;
+    private Integer radius; //Apiden kontrol ederek double den integere çevrildi
 }
