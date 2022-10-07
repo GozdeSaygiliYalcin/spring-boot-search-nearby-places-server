@@ -2,6 +2,8 @@ package ist.codex.searchnearbyplaces.constants;
 
 public class ApiUrl {
 
-    //api url ler eklenecek
-
+    public static final String VERSION = "/v1";
+    public static final String TYPE = "/api";
+    public static final String BASE_URL = VERSION + TYPE;
+    public static final String SEARCH = "/search";
 }

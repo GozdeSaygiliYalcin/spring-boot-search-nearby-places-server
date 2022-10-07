@@ -15,36 +15,38 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.Optional;
 
+import static ist.codex.searchnearbyplaces.constants.ApiUrl.*;
+
 
 @RestController
-@RequestMapping("/searchnearbyplaces")
+@RequestMapping(BASE_URL)
 @RequiredArgsConstructor
 public class LocationController {
 
     private final ILocationService locationService;
     private final IGooglePlacesComponent googlePlacesComponent;
 
-    @GetMapping("/search")
-    public ResponseEntity<String> getNearbyPlaces(@RequestParam("long") Double longitude,
-                                                    @RequestParam("lat") Double latitude,
-                                                    @RequestParam("r") Integer radius) {
-        Optional<Location> optionalLocation = locationService.findLocation(longitude, latitude, radius);
+    @GetMapping(SEARCH)
+    public ResponseEntity<String> getNearbySearch(@RequestParam("lat") Double latitude,
+                                                  @RequestParam("long") Double longitude,
+                                                  @RequestParam("r") Integer radius) {
+        Optional<Location> optionalLocation = locationService.findLocation(latitude, longitude, radius);
         Location location;
             if(optionalLocation.isPresent())
                 location = optionalLocation.get();
             else
-               location = locationService.saveLocation(longitude, latitude, radius);
-            return ResponseEntity.ok(googlePlacesComponent.findNearby(location));
+               location = locationService.saveLocation(latitude, longitude, radius);
+            return ResponseEntity.ok(googlePlacesComponent.searchNearby(location));
             }
     }
 
 //    @GetMapping("/search")
-//    public ResponseEntity<Location> getNearbyPlaces(@RequestBody @Valid SaveLocationRequestDto dto) {
+//    public ResponseEntity<Location> getNearbyPlaces(@RequestBody @Valid GetLocationResponseDto dto) {
 //        Optional<Location> location = locationService.findLocation(dto); //request ve responseler düzenlenecek
 //        if(location.isPresent()) {
 //            throw new SearchNearbyPlacesException()
 //            return ResponseEntity.ok(location.get());
 //        }
-//        return ResponseEntity.ok(new Location());
+//        return ResponseEntity.ok(new Location(dto));
 //    }
 //}
