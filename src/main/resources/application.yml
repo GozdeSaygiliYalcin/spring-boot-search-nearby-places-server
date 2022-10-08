@@ -3,7 +3,7 @@ google:
     key: AIzaSyAqQ1TZj85PWPe3Eqfm7vLfb_lByCo_qwQ
     scheme: https
     url: maps.googleapis.com/maps/api/place/nearbysearch/json
-#api key will be checked
+
 server:
   port: 8070
 

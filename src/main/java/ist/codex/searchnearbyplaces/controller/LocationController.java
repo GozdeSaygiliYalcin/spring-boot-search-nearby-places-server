@@ -21,6 +21,7 @@ import static ist.codex.searchnearbyplaces.constants.ApiUrl.*;
 @RestController
 @RequestMapping(BASE_URL)
 @RequiredArgsConstructor
+@CrossOrigin
 public class LocationController {
 
     private final ILocationService locationService;
