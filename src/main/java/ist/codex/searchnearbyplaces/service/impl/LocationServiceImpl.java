@@ -3,7 +3,6 @@ package ist.codex.searchnearbyplaces.service.impl;
 import ist.codex.searchnearbyplaces.entity.Location;
 import ist.codex.searchnearbyplaces.repository.ILocationRepository;
 import ist.codex.searchnearbyplaces.service.ILocationService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -35,9 +34,4 @@ public class LocationServiceImpl implements ILocationService {
                             .build();
         return locationRepository.save(location);
     }
-//
-//    @Override
-//    public Location saveLocation(Location location) {
-//        return locationRepository.save(location);
-//    }
 }

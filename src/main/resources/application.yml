@@ -1,6 +1,6 @@
 google:
   api:
-    key: AIzaSyAqQ1TZj85PWPe3Eqfm7vLfb_lByCo_qwQ
+    key: ${API_KEY}
     scheme: https
     url: maps.googleapis.com/maps/api/place/nearbysearch/json
 
@@ -11,7 +11,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/SearchNearbyPlaces
     username: postgres
-    password: 2211223
+    password: ${PASSWORD}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:

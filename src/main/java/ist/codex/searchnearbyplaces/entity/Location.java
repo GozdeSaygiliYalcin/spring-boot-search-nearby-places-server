@@ -23,5 +23,5 @@ public class Location {
     @Column(name = "latitude", nullable = false)
     private Double latitude;
     @Column(name = "radius", nullable = false)
-    private Integer radius; //Apiden kontrol ederek double den integere çevrildi
+    private Integer radius;
 }
