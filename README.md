@@ -37,4 +37,4 @@ This project developed using Spring Boot, PostgreSql and React.
 
 * To the run please enter your ${API-KEY}
 * The postgreSql password = ${PASSWORD]
-* In order to test you can use H2 database it is added to the dependencies. 
+* In order to test you can use H2 database, which is also added to the dependencies. 
